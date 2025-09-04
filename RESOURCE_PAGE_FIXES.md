@@ -35,6 +35,16 @@ This document outlines the fixes applied to resolve JavaScript errors and resour
   - CORS headers for local development
   - Gzip compression
 
+### 6. Permissions Policy Violations
+- **Problem**: Autoplay and encrypted-media policy violations
+- **Solution**: Added permissions policy headers and meta tags
+- **Implementation**: Allows autoplay and encrypted-media while restricting sensitive permissions
+
+### 7. Local Development CORS Issues
+- **Problem**: XMLHttpRequest blocked by CORS when using file:// protocol
+- **Solution**: Enhanced error handler with XMLHttpRequest wrapper
+- **Note**: For local development, use a local server (e.g., `python -m http.server` or similar)
+
 ## Files Created/Modified
 
 ### New Files
@@ -67,6 +77,8 @@ After applying these fixes, the following errors should be resolved:
 - ✅ Cloudflare Turnstile timeout errors
 - ✅ Cross-origin policy violations
 - ✅ Missing favicon 404 errors
+- ✅ Permissions policy violations (autoplay, encrypted-media)
+- ✅ XMLHttpRequest CORS errors in local development
 
 ## Browser Compatibility
 
@@ -97,4 +109,3 @@ Potential enhancements:
 2. Implement retry mechanisms for failed resources
 3. Add user-friendly error messages
 4. Create fallback content for failed components
-

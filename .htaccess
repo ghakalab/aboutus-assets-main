@@ -13,6 +13,9 @@ Header always set X-XSS-Protection "1; mode=block"
 Header always set Cross-Origin-Embedder-Policy "unsafe-none"
 Header always set Cross-Origin-Opener-Policy "unsafe-none"
 
+# Permissions Policy Headers
+Header always set Permissions-Policy "autoplay=*, encrypted-media=*, camera=(), microphone=(), geolocation=()"
+
 # CORS Headers for local development
 Header always set Access-Control-Allow-Origin "*"
 Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
@@ -49,4 +52,3 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} \.(png|jpg|jpeg|gif|ico|svg|css|js)$ [NC]
 RewriteRule ^(.*)$ /assets/placeholder.png [L,R=302]
-
