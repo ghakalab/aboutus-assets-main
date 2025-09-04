@@ -46,7 +46,6 @@
     });
     
     // Handle permissions policy violations
-    const originalConsoleWarn = console.warn;
     console.warn = function(...args) {
         const message = args.join(' ');
         if (message.includes('Potential permissions policy violation') ||
